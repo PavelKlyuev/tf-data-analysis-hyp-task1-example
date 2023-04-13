@@ -12,8 +12,5 @@ def solution(x_success: int,
         count = np.array([x_success, y_success])
         nobs = np.array([x_cnt, y_cnt])
         z,p = proportions_ztest(count, nobs, value=0, alternative='two-sided')
-    
-        if p < alpha:
-            return True
-        else:
-            return False
+        return True if p < alpha else False
+        
